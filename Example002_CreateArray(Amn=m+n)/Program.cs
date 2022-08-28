@@ -1,17 +1,35 @@
 ﻿// Задать двумерный массив следующим правилом: Aₘₙ = m+n
 
-
-
-int m = 5;
+int m = 10;
 int n = 10;
+//int[,] A = new int [m,n]; 
 
-int[,] matrix =new int[m, n];
+int[,] matrix = new int[m,n];
 
-for (int i = 0; i < matrix.GetLength(0); i++)
+PrintArray(matrix);
+FillArray(matrix);
+PrintArray(matrix);
+
+void PrintArray(int[,] matr)
 {
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    for (int i = 0; i < m; i++)
     {
-        Console.Write($"{matrix[i, j]} ");
+        for (int j = 0; j < n; j++)
+        {
+            Console.Write($"{matrix[i, j]} ");
+        }
+    Console.WriteLine();    
     }
-Console.WriteLine();    
 }
+void FillArray(int[,] matr)
+{
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            matr[i, j] = i+j; 
+        }
+    Console.WriteLine();    
+    }
+}
+
